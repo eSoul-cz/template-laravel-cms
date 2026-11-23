@@ -1,0 +1,104 @@
+{
+    "export": {
+        "schemaVersion": 1,
+        "generatedAt": "2026-11-18T08:00:00+00:00",
+        "contentHash": "sha256:47f1e1ec01646bba7ffc1b56644c2d439e980b34edf9b578161d84c49228b586",
+        "settings": {
+            "siteName": "Example Site",
+            "description": "Example Site is a sample website built from the headless CMS export: pages, one settings record and a verified static build.",
+            "contactEmail": "hello@example.com",
+            "footerText": "Example Site s.r.o.",
+            "ogImage": {
+                "url": "/_cms/43afcbd55d743fb5511a.png",
+                "mime": "image/png",
+                "bytes": 326,
+                "sha256": "43afcbd55d743fb5511abc4f2a790ac187e3505f0d52673a19347841de352dbb",
+                "width": 16,
+                "height": 9
+            }
+        },
+        "pages": [
+            {
+                "id": 1,
+                "slug": "home",
+                "isHome": true,
+                "sort": 10,
+                "title": "Welcome",
+                "description": "The home page of the example site, rendered from the CMS export with a heading, two paragraphs of text and a sample image.",
+                "blocks": [
+                    {
+                        "type": "heading",
+                        "level": 2,
+                        "text": "What we do"
+                    },
+                    {
+                        "type": "text",
+                        "body": "First paragraph.\n\nSecond paragraph."
+                    },
+                    {
+                        "type": "image",
+                        "image": {
+                            "url": "/_cms/43afcbd55d743fb5511a.png",
+                            "mime": "image/png",
+                            "bytes": 326,
+                            "sha256": "43afcbd55d743fb5511abc4f2a790ac187e3505f0d52673a19347841de352dbb",
+                            "width": 16,
+                            "height": 9
+                        },
+                        "alt": "A blue gradient",
+                        "caption": "A tiny sample image"
+                    }
+                ],
+                "updatedAt": "2026-11-10T09:00:00+00:00",
+                "noindex": false,
+                "ogImage": null
+            },
+            {
+                "id": 2,
+                "slug": "about",
+                "isHome": false,
+                "sort": 20,
+                "title": "About us",
+                "description": null,
+                "blocks": [
+                    {
+                        "type": "heading",
+                        "level": 3,
+                        "text": "Our story"
+                    },
+                    {
+                        "type": "text",
+                        "body": "We write small, boring, reliable software."
+                    }
+                ],
+                "updatedAt": "2026-11-12T10:30:00+00:00",
+                "noindex": false,
+                "ogImage": {
+                    "url": "/_cms/43afcbd55d743fb5511a.png",
+                    "mime": "image/png",
+                    "bytes": 326,
+                    "sha256": "43afcbd55d743fb5511abc4f2a790ac187e3505f0d52673a19347841de352dbb",
+                    "width": 16,
+                    "height": 9
+                }
+            },
+            {
+                "id": 3,
+                "slug": "thanks",
+                "isHome": false,
+                "sort": 25,
+                "title": "Thank you",
+                "description": null,
+                "blocks": [
+                    {
+                        "type": "text",
+                        "body": "Your message was sent."
+                    }
+                ],
+                "updatedAt": "2026-11-15T12:00:00+00:00",
+                "noindex": true,
+                "ogImage": null
+            }
+        ]
+    }
+}
