@@ -24,8 +24,9 @@ final class FormsAdminTest extends TestCase
     public function test_the_newest_submission_comes_first_and_the_list_is_searchable(): void
     {
         $this->actingAs(User::factory()->create(['is_admin' => true]));
-        $old = FormSubmission::factory()->create(['name' => 'Old Sender', 'created_at' => now()->subDay()]);
-        $new = FormSubmission::factory()->create(['name' => 'New Sender']);
+        // Fixed emails: the search covers name and email, and a random email may contain "old" (harold@…).
+        $old = FormSubmission::factory()->create(['name' => 'Old Sender', 'email' => 'first@example.com', 'created_at' => now()->subDay()]);
+        $new = FormSubmission::factory()->create(['name' => 'New Sender', 'email' => 'second@example.com']);
 
         Livewire::test(ListFormSubmissions::class)
             ->assertCanSeeTableRecords([$new, $old], inOrder: true)
