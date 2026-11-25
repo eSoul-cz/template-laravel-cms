@@ -100,4 +100,17 @@ final class CmsApiTest extends TestCase
 
         self::assertSame(PublishStatus::Failed, $publish->refresh()->status);
     }
+
+    public function test_the_callback_rejects_a_body_without_a_result(): void
+    {
+        config(['cms.jenkins.callback_token' => 'callback']);
+        $publish = Publish::query()->create(['status' => PublishStatus::Running, 'started_at' => now()]);
+
+        $this->withToken('callback')
+            ->postJson("/cms-api/v1/publishes/{$publish->id}/status", ['buildUrl' => 'not a url'])
+            ->assertStatus(422)
+            ->assertJsonValidationErrors(['result', 'buildUrl']);
+
+        self::assertSame(PublishStatus::Running, $publish->refresh()->status);
+    }
 }
